@@ -1,5 +1,4 @@
-# MySQL_note
-clear up some basis grammar of mysql, it's only let me to search some message of mysql
+**clear up some basis grammar of mysql, it's only let me to search some message of mysql**
 
 
  - 启动和关闭MySQL(window): 桌面 - 我的电脑右键 - 管理 - Services - 找到Mysql右键关闭
@@ -47,11 +46,11 @@ clear up some basis grammar of mysql, it's only let me to search some message of
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`WHERE NOT(job_id > 50);` --> 查询除了`job_id > 50`的信息
 
 3、模糊查询:
-- LIKE : 查询字段值的格式一致的, 例如: first_name LIKE ("%e%")  
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;语法: 字段 LIKE ("匹配模式") _代表任意字符, %代表任意个字符, \代表转义字符\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;自定义转义字符: 字段 LIKE ("匹配模式") ESCAPE "转义字符";
+- like : 查询字段值的格式一致的, 例如: `first_name like ("%e%")`
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;语法: `字段 LIKE ("匹配模式")` (_代表任意字符, %代表任意个字符, \代表转义字符)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;自定义转义字符: `字段 LIKE ("匹配模式") ESCAPE "转义字符";`
 
-- IN : 查询字段值是以下几个的, 例如: job_id IN (10, 11, 12)    
+- IN : 查询字段值是以下几个的, 例如: `job_id IN (10, 11, 12)`
 
 - BETWEEN...AND : 查询字符字段是规定范围内的, 例如: `job_id BETWEEN 50 AND 100`  ==== `job_id >= 50 AND job_id <= 100`;
 
@@ -146,7 +145,7 @@ clear up some basis grammar of mysql, it's only let me to search some message of
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;when 常量值/语句 then 常量值/语句\
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;when 常量值/语句 then 常量值/语句\
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else 常量值/语句\
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end\
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end;
 
 ```
 例子:
@@ -247,7 +246,7 @@ HAVING
 	*注意*:为表起别名后就不能再用原来的表名去操作
 
 ### 内连接
-用法: 内连接通过两个或者两个以上的表的交集部分拼接成一个表(忽略值为null或者不存在的情况,这是其相对于外连接的不同)
+>用法: 内连接通过两个或者两个以上的表的交集部分拼接成一个表(忽略值为null或者不存在的情况,这是其相对于外连接的不同)
 
 1、分类:
 - 等值连接
@@ -640,7 +639,7 @@ drop table <if exists> 表名;
     <1> datetime, timestamp均表示日期时间, 前者范围更广, 后者表示1970-2038, 后者
         保存的时间会因为时区的不同而显示不同的值(受时区影响)
     <2> date表示日期, time表示时间, year表示年
-    <3>字节长度:datetime为8,timestamp为4    
+    <3> 字节长度:datetime为8,timestamp为4    
 
   例子: 将一个日期时间以不同个数存入数据库
       create table test (
