@@ -32,7 +32,7 @@ CREATE TABLE `employees`  (
   `commission_pct` double(4, 2) NULL DEFAULT NULL,
   `manager_id` int(6) NULL DEFAULT NULL,
   `department_id` int(4) NULL DEFAULT NULL,
-  `hiredate` datetime(0) NULL DEFAULT NULL,
+  `hiredate` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`employee_id`) USING BTREE,
   INDEX `dept_id_fk`(`department_id`) USING BTREE,
   INDEX `job_id_fk`(`job_id`) USING BTREE,

@@ -989,6 +989,8 @@ call compareDate(str_to_date("1999-10-1", "%Y-%c-%e"), str_to_date("1998-10-1", 
 ```
 查看存储过程的一些信息:show create procedure 存储过程名
 删除存储过程: DROP PROCEDURE 存储过程名 (注意:不支持一次删除多个)
+注意: set autocommit = 0必须放在declare语句上面, 即declare语句必须放在最上面, 并且while循环中不
+      允许用declare声明变量
 ```
 
 ### 函数
@@ -1135,6 +1137,7 @@ loop:死循环,除非用循环控制语句才能跳出循环
 注意:
   <1>对于以上的循环结构,只适用于begin end中
   <2>如果在循环前面加入了标签名,那么在循环后面也需要加入标签名
+  <3>循环语句中不可以用declare语句
 循环控制语句:
   <1>leave 相当于break,后面要接标签名,用于直接退出循环
   <2>iterate 相当于continue,后面要接标签名,用于退出本次循环    
