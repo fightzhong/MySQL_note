@@ -61,3 +61,4 @@ CentOS7的yum源仓库中不存在MySQL的yum源, 需要手动下载后添加:
 <9> 解决中文乱码问题: 在配置文件中的[mysqld]栏目下添加如下命令:
     character-set-server=utf8
 ```
+
