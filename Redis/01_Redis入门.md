@@ -18,13 +18,16 @@ redis-check-dump/redis-check-rdb: RDB文件修复工具
 redis-sentinel: Sentinel服务器(2.8以后)
 ```
 
-## Redis启动
+## Redis启动/关闭
 ```
 最简启动: redis-server(使用redis默认配置, 默认为6379端口)
 动态参数启动: redis-server --port 6380
 配置文件启动: redis-server configpath(配置文件路径)
 
 建议生产环境选择配置文件启动, 单机多实例(一台机器开启多个Redis)配置文件可以用端口区分开
+
+关闭:
+  redis-cli -p xxx shutdown
 ```
 
 ## 验证Redis启动
