@@ -143,4 +143,5 @@ sentinel failover-timeout mymaster 180000: failover过期时间，当failover开
     数sentinel主观认为master下线的话, 就会认为此次的主观下线是失败的
 <2> 在进行主从和sentinel集群配置的时候, 采用真正的ip地址, 而不要采用127.0.0.1回环地址
 <3> sentinel进行故障转移后, 转移后的配置会持久化到主从和sentinel配置文件中, 从而使得即使重启也可以保持变更后的状态
+<4> 手动故障转移: sentinel failover <mastername>, 如: redis-cli -p 26379 sentinel failover mymaster
 ```
